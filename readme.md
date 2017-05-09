@@ -63,7 +63,7 @@ The usage for MRZ scanner library project.
  <img src="http://i.imgur.com/e8wLCpS.jpg" width="450">
 
 - **Wait until scan finished**
- <img src="http://i.imgur.com/eNJGe4F.png" width="450">
+ <img src="http://i.imgur.com/Sou53If.png" width="450">
 
 - **get scan result with onActivityResult method, After press Confirm button**
 	```java
