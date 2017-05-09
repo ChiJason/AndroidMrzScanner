@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">AndroidMrzScanner</string>
+    <string name="title_activity_mrz_scanner">MrzScannerActivity</string>
+
+    <string name="mrz_scanner_title_bar_text">MRZ Information</string>
+    <string name="mrz_scanner_label_surname">Surname:</string>
+    <string name="mrz_scanner_label_forename">Forename:</string>
+    <string name="mrz_scanner_label_gender">Gender:</string>
+    <string name="mrz_scanner_label_date_of_birth">Date Of Birth:</string>
+    <string name="mrz_scanner_label_document_type">Document Type:</string>
+    <string name="mrz_scanner_label_document_number">Document Number:</string>
+    <string name="mrz_scanner_label_expire_date">Expire Date:</string>
+    <string name="mrz_scanner_label_nationality">Nationality:</string>
+    <string name="mrz_scanner_button_confirm">Confirm</string>
+    <string name="mrz_scanner_button_cancel">Cancel</string>
+
+    <string name="mrz_scanner_message_blinkid_supported">BlinkID is supported!</string>
+    <string name="mrz_scanner_message_blinkid_not_supported">BlinkID is not supported! Reason: </string>
+
+</resources>

@@ -1,0 +1,20 @@
+apply plugin: 'maven'
+
+def enableUploadArchives = ext.has('maven_group_id') && ext.has('maven_artifact_id') && ext.has('maven_version')
+
+if (enableUploadArchives) {
+    uploadArchives {
+        repositories {
+            mavenDeployer {
+                pom.groupId = maven_group_id
+                pom.artifactId = maven_artifact_id
+                pom.version = maven_version
+
+                def suffix = pom.version.contains("SNAPSHOT") ? "snapshot" : "release"
+                repository(url: "$mavenRepoURL" + "libs-${suffix}-local/") {
+                    authentication(userName: mavenRepoId, password: mavenRepoPwd)
+                }
+            }
+        }
+    }
+}

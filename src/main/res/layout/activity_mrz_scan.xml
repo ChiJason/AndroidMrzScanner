@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context="com.ogloba.kyc.mrz.scanner.android.MrzScanActivity">
+
+    <include
+        android:id="@+id/mrzScannerTitleBar"
+        layout="@layout/mrzscanner_component_title_bar_with_text" />
+
+    <include
+        android:id="@+id/mrzComponentDataRowSurname"
+        layout="@layout/mrzscanner_component_data_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="20dp"/>
+
+    <include
+        android:id="@+id/mrzComponentDataRowForename"
+        layout="@layout/mrzscanner_component_data_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"/>
+
+    <include
+        android:id="@+id/mrzComponentDataRowGender"
+        layout="@layout/mrzscanner_component_data_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"/>
+
+    <include
+        android:id="@+id/mrzComponentDataRowDateOfBirth"
+        layout="@layout/mrzscanner_component_data_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"/>
+
+    <include
+        android:id="@+id/mrzComponentDataRowDocumentType"
+        layout="@layout/mrzscanner_component_data_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"/>
+
+    <include
+        android:id="@+id/mrzComponentDataRowDocumentNumber"
+        layout="@layout/mrzscanner_component_data_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"/>
+
+    <include
+        android:id="@+id/mrzComponentDataRowExpireDate"
+        layout="@layout/mrzscanner_component_data_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"/>
+
+    <include
+        android:id="@+id/mrzComponentDataRowNationality"
+        layout="@layout/mrzscanner_component_data_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"/>
+
+    <Button
+        android:id="@+id/mrzComponentNormalButtonConfirm"
+        style="@style/MrzNormalButtonStyle"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/mrzComponentNormalButtonCancel"
+        style="@style/MrzNormalButtonStyle"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="10dp"/>
+
+</LinearLayout>
