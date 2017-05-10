@@ -5,7 +5,6 @@ android:
     # Uncomment the lines below if you want to
     # use the latest revision of Android SDK Tools
     - tools
-    - tools
     - platform-tools
 
     # The BuildTools version used by your project
@@ -23,6 +22,12 @@ android:
     # Specify at least one system image,
     # if you need to run emulator(s) during your tests
     - sys-img-armeabi-v7a-android-22
+
+before_script:
+- echo no | android create avd --force -n test -t android-24 --abi armeabi-v7a
+- emulator -avd test -no-skin -no-audio -no-window &
+- android-wait-for-emulator
+- adb shell input keyevent 82 &
 
 notifications:
   email:
