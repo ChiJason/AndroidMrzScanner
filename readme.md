@@ -1,4 +1,6 @@
- Android MRZ Scanner Library Project tutorial by using BlinkID  [![Build Status](https://travis-ci.org/ChiJason/AndroidMrzScanner.svg?branch=master)](https://travis-ci.org/ChiJason/AndroidMrzScanner)
+ [![Build Status](https://travis-ci.org/ChiJason/AndroidMrzScanner.svg?branch=master)](https://travis-ci.org/ChiJason/AndroidMrzScanner)
+
+ Android MRZ Scanner Library Project tutorial by using BlinkID
  ---------
 # Revision History #
 | Date | Version | Author | Brief |
