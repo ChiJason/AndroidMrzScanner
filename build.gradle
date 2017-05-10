@@ -1,4 +1,13 @@
-apply plugin: 'android-library'
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.3.1'
+    }
+}
+
+apply plugin: 'com.android.library'
 
 ext {
     maven_group_id = 'com.ogloba.kyc.mrz'
