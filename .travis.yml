@@ -12,7 +12,6 @@ android:
 
     # The SDK version used to compile your project
     - android-24
-    - android-22
 
     # Additional components
     - extra-google-google_play_services
@@ -30,5 +29,7 @@ android:
     email:
       recipients:
         - jason79720@gmail.com
+        - jac@ogloba.com
+        - wil@ogloba.com
       on_success: always
       on_failure: always
