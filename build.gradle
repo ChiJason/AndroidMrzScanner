@@ -33,6 +33,7 @@ repositories {
     maven { url 'http://maven.microblink.com' }
 }
 
+apply from: 'https://raw.githubusercontent.com/adwiv/android-fat-aar/master/fat-aar.gradle'
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
