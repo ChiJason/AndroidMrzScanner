@@ -8,7 +8,7 @@ buildscript {
 }
 
 repositories {
-    maven { url 'http://repo1.maven.org/maven2' }
+    mavenCentral()
 }
 
 apply plugin: 'com.android.library'
@@ -57,7 +57,11 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-
+    androidTestCompile 'com.android.support.test:runner:0.5'
+    // Set this dependency to use JUnit 4 rules
+    androidTestCompile 'com.android.support.test:rules:0.5'
+    // Set this dependency to build and run Espresso tests
+    androidTestCompile 'com.android.support:support-annotations:24.2.0'
     compile('com.microblink:blinkid:3.7.0@aar') {
         transitive = true
     }
