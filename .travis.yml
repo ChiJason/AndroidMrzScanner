@@ -6,6 +6,7 @@ android:
     # use the latest revision of Android SDK Tools
     - tools
     - platform-tools
+    - tools
 
     # The BuildTools version used by your project
     - build-tools-25.0.0
@@ -29,6 +30,9 @@ before_install:
   - unzip -n gradle-3.3-bin.zip
   - export GRADLE_HOME=$PWD/gradle-3.3
   - export PATH=$GRADLE_HOME/bin:$PATH
+
+script:
+  - ./gradlew test
 
 notifications:
   email:
