@@ -9,8 +9,8 @@
         android:theme="@style/AppTheme">
 
         <activity android:name=".MrzScanActivity"
-            android:screenOrientation="portrait">
-        </activity>
+        android:screenOrientation="portrait">
+    </activity>
 
     </application>
 

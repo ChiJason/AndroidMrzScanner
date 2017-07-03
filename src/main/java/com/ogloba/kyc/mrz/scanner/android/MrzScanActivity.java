@@ -1,10 +1,9 @@
 package com.ogloba.kyc.mrz.scanner.android;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -141,7 +140,7 @@ public class MrzScanActivity extends AppCompatActivity {
 
         RecognizerCompatibilityStatus status = RecognizerCompatibility.getRecognizerCompatibilityStatus(this);
         if(status == RecognizerCompatibilityStatus.RECOGNIZER_SUPPORTED) {
-            Toast.makeText(this, R.string.mrz_scanner_message_blinkid_supported, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.mrz_scanner_message_blinkid_supported, Toast.LENGTH_LONG).show();
             isSupported = true;
         } else {
             Toast.makeText(this, R.string.mrz_scanner_message_blinkid_not_supported + status.name(), Toast.LENGTH_SHORT).show();

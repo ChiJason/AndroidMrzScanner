@@ -14,7 +14,7 @@
     <string name="mrz_scanner_button_confirm">Confirm</string>
     <string name="mrz_scanner_button_cancel">Cancel</string>
 
-    <string name="mrz_scanner_message_blinkid_supported">BlinkID is supported!</string>
+    <string name="mrz_scanner_message_blinkid_supported">BlinkID is supported! Scan ID Card</string>
     <string name="mrz_scanner_message_blinkid_not_supported">BlinkID is not supported! Reason: </string>
 
 </resources>
