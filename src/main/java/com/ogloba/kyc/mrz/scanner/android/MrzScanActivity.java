@@ -35,6 +35,7 @@ public class MrzScanActivity extends AppCompatActivity {
     private final static int SDK_REQUEST_CODE = 777;
 
     private String LICENSE_KEY;
+    private String title;
 
     private TextView surname;
     private TextView forename;
@@ -58,6 +59,19 @@ public class MrzScanActivity extends AppCompatActivity {
         activity.startActivityForResult(intent, REQUEST_CODE);
     }
 
+    /**
+     * Launching MRZ Scanner
+     * @param activity Activity for using library project
+     * @param license_key the license key from BlinkId for using MRZ scanner.
+     * @param title the title for scan result title bar.
+     */
+    public static void startMrzScanActivity(Activity activity, String license_key, String title) {
+        Intent intent = new Intent(activity, MrzScanActivity.class);
+        intent.putExtra("LICENSE_KEY", license_key);
+        intent.putExtra("TITLE", title);
+        activity.startActivityForResult(intent, REQUEST_CODE);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,6 +81,11 @@ public class MrzScanActivity extends AppCompatActivity {
         setupView();
 
         this.LICENSE_KEY = getIntent().getStringExtra("LICENSE_KEY");
+        this.title = getIntent().getStringExtra("TITLE");
+
+        if(title != null){
+            ((TextView) findViewById(R.id.mrzscannerTitleBarText)).setText(title);
+        }
 
         if(checkIfBlinkIDisSupported()){
             startScanning();
