@@ -221,6 +221,9 @@ public class MrzScanActivity extends AppCompatActivity {
                                 identificationDetail.setDocumentType(result.getDocumentType().toString().replace("MRTD_TYPE_", ""));
                                 identificationDetail.setExpireDate(sdf.format(result.getDateOfExpiry()));
                                 identificationDetail.setNationality(result.getNationality());
+                                identificationDetail.setIssuer(result.getIssuer());
+                                identificationDetail.setOpt1(result.getOpt1());
+                                identificationDetail.setOpt2(result.getOpt2());
 
                             } else {
                                 OcrResult rawOcr = result.getOcrResult();
