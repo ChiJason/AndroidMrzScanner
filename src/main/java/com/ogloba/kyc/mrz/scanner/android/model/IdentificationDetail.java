@@ -17,6 +17,9 @@ public class IdentificationDetail implements Parcelable {
     private String documentNumber;
     private String expireDate;
     private String nationality;
+    private String issuer;
+    private String opt1;
+    private String opt2;
 
     public static final Creator<IdentificationDetail> CREATOR = new Creator<IdentificationDetail>() {
         @Override
@@ -40,6 +43,9 @@ public class IdentificationDetail implements Parcelable {
         this.documentNumber = source.readString();
         this.expireDate = source.readString();
         this.nationality = source.readString();
+        this.issuer = source.readString();
+        this.opt1 = source.readString();
+        this.opt2 = source.readString();
     }
 
     @Override
@@ -57,6 +63,9 @@ public class IdentificationDetail implements Parcelable {
         dest.writeString(documentNumber);
         dest.writeString(expireDate);
         dest.writeString(nationality);
+        dest.writeString(issuer);
+        dest.writeString(opt1);
+        dest.writeString(opt2);
     }
 
     public String getSurname() {
@@ -121,5 +130,29 @@ public class IdentificationDetail implements Parcelable {
 
     public void setNationality(String nationality) {
         this.nationality = nationality;
+    }
+
+    public String getIssuer() {
+        return issuer;
+    }
+
+    public void setIssuer(String issuer) {
+        this.issuer = issuer;
+    }
+
+    public String getOpt1() {
+        return opt1;
+    }
+
+    public void setOpt1(String opt1) {
+        this.opt1 = opt1;
+    }
+
+    public String getOpt2() {
+        return opt2;
+    }
+
+    public void setOpt2(String opt2) {
+        this.opt2 = opt2;
     }
 }
