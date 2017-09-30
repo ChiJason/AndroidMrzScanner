@@ -25,6 +25,7 @@ import com.microblink.util.RecognizerCompatibilityStatus;
 import com.ogloba.kyc.mrz.scanner.android.model.IdentificationDetail;
 
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class MrzScanActivity extends AppCompatActivity {
 
@@ -209,21 +210,20 @@ public class MrzScanActivity extends AppCompatActivity {
 
                         if (result.isValid() && !result.isEmpty()) {
                             if (result.isMRZParsed()) {
-                                SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd", getApplication().getResources().getConfiguration().locale);
-
                                 identificationDetail = new IdentificationDetail();
-
                                 identificationDetail.setSurname(result.getPrimaryId());
                                 identificationDetail.setForename(result.getSecondaryId());
                                 identificationDetail.setGender(result.getSex());
-                                identificationDetail.setDateOfBirth(sdf.format(result.getDateOfBirth()));
+                                identificationDetail.setDateOfBirth(result.getDateOfBirth());
                                 identificationDetail.setDocumentNumber(result.getDocumentNumber());
-                                identificationDetail.setDocumentType(result.getDocumentType().toString().replace("MRTD_TYPE_", ""));
-                                identificationDetail.setExpireDate(sdf.format(result.getDateOfExpiry()));
+                                identificationDetail.setDocumentType(result.getDocumentType());
+                                identificationDetail.setExpireDate(result.getDateOfExpiry());
                                 identificationDetail.setNationality(result.getNationality());
                                 identificationDetail.setIssuer(result.getIssuer());
                                 identificationDetail.setOpt1(result.getOpt1());
                                 identificationDetail.setOpt2(result.getOpt2());
+
+                                Log.d(TAG, "MRZ Scan Result: " + identificationDetail.toString());
 
                             } else {
                                 OcrResult rawOcr = result.getOcrResult();

@@ -3,6 +3,9 @@ package com.ogloba.kyc.mrz.scanner.android.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.microblink.recognizers.blinkid.mrtd.MRTDDocumentType;
+import com.microblink.results.date.Date;
+
 /**
  * Created by JasonChi on 2017/5/4.
  */
@@ -96,16 +99,20 @@ public class IdentificationDetail implements Parcelable {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(String dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
+    public void setDateOfBirth(Date dateOfBirth) {
+        if(dateOfBirth != null){
+            this.dateOfBirth = dateOfBirth.getYear() + "/" + dateOfBirth.getMonth() + "/" + dateOfBirth.getDay();
+        }
     }
 
     public String getDocumentType() {
         return documentType;
     }
 
-    public void setDocumentType(String documentType) {
-        this.documentType = documentType;
+    public void setDocumentType(MRTDDocumentType documentType) {
+        if(documentType != null){
+            this.documentType = documentType.toString().replace("MRTD_TYPE_", "");
+        }
     }
 
     public String getDocumentNumber() {
@@ -113,15 +120,19 @@ public class IdentificationDetail implements Parcelable {
     }
 
     public void setDocumentNumber(String documentNumber) {
-        this.documentNumber = documentNumber;
+        if(documentNumber != null){
+            this.documentNumber = documentNumber.replace("<", "");
+        }
     }
 
     public String getExpireDate() {
         return expireDate;
     }
 
-    public void setExpireDate(String expireDate) {
-        this.expireDate = expireDate;
+    public void setExpireDate(Date expireDate) {
+        if(dateOfBirth != null){
+            this.expireDate = expireDate.getYear() + "/" + expireDate.getMonth() + "/" + expireDate.getDay();
+        }
     }
 
     public String getNationality() {
@@ -154,5 +165,22 @@ public class IdentificationDetail implements Parcelable {
 
     public void setOpt2(String opt2) {
         this.opt2 = opt2;
+    }
+
+    @Override
+    public String toString() {
+        String result =
+                "Surname: " + surname + "\n" +
+                "Forename: " + forename + "\n" +
+                "Gender: " + gender + "\n" +
+                "DateOfBirth: " + dateOfBirth + "\n" +
+                "DocumentType: " + documentType + "\n" +
+                "DocumentNumber: " + documentNumber + "\n" +
+                "ExpireDate: " + expireDate + "\n" +
+                "Nationality:" + nationality + "\n" +
+                "Issuer:" + issuer + "\n" +
+                "Opt1: " + opt1 + "\n" +
+                "Opt2: " + opt2;
+        return result;
     }
 }
